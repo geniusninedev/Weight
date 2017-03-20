@@ -1,10 +1,12 @@
 package com.nineinfosys.android.weight.Weight;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,6 +31,7 @@ public class WeightFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_main_weight, null);
+
         ((MainActivityDrawer) getActivity()).toolbar.setTitle("Weight Conversion");
         editTextWeight=(EditText)v.findViewById(R.id.editTextWeight);
         spinnerWeight1=(Spinner)v.findViewById(R.id.spinnerWeight1);
@@ -78,6 +81,10 @@ public class WeightFragment extends Fragment {
 
             }
         });
+        getActivity().getWindow().setSoftInputMode(
+                WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
+        );
+
      return v;
     }
 
