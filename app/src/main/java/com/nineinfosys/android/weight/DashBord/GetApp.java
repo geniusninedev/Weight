@@ -1,5 +1,6 @@
 package com.nineinfosys.android.weight.DashBord;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -69,7 +71,10 @@ public class GetApp extends AppCompatActivity {
         buttonGetQuote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String MobileNumberpattern = "[0-9]{10}";
+                //for hiding keyboard
+                InputMethodManager inputManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+                String MobileNumberpattern = "[0-9]{12}";
                 String emailpattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
                 if(editTextdevice.getText().toString().trim().equals("")){
                     editTextdevice.setError("Device Required");
