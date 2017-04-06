@@ -1,4 +1,4 @@
-package com.nineinfosys.android.weight.Login;
+package com.nineinfosys.android.weight.Contacts;
 
 /**
  * Created by Dev on 13-03-2017.
