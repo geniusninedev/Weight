@@ -24,6 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.nineinfosys.android.weight.MainActivityDrawer;
 import com.nineinfosys.android.weight.R;
 
+
 public class SignUp extends AppCompatActivity {
 
     private static final String TAG = "Login";
@@ -53,7 +54,7 @@ public class SignUp extends AppCompatActivity {
         password = (EditText) findViewById(R.id.edit_text_new_password);
 
         mAuth = FirebaseAuth.getInstance();
-        mRef = FirebaseDatabase.getInstance().getReference().child(getString(R.string.app_id)).child("Users").child(getString(R.string.email_data));
+        mRef = FirebaseDatabase.getInstance().getReference().child(getString(R.string.app_id)).child("Users");//.child(getString(R.string.email_data));
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
@@ -198,8 +199,8 @@ public class SignUp extends AppCompatActivity {
 
         String user_id = mAuth.getCurrentUser().getUid();
         DatabaseReference current_user_db = mRef.child(user_id);
-        current_user_db.child("Name").setValue(user.getName());
-        current_user_db.child("UserId").setValue(user.getId());
+        current_user_db.child("name").setValue(user.getName());
+        current_user_db.child("id").setValue(user.getId());
         current_user_db.child("Email").setValue(user.getEmail());
         current_user_db.child("Password").setValue(user.getPassword());
         current_user_db.child("Phone Number").setValue(user.getPhoneNumber());
