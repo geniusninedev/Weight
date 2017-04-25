@@ -38,8 +38,6 @@ import com.microsoft.windowsazure.mobileservices.http.OkHttpClientFactory;
 import com.microsoft.windowsazure.mobileservices.table.MobileServiceTable;
 import com.nineinfosys.android.weight.Contacts.Contacts;
 import com.nineinfosys.android.weight.DashBord.GetApp;
-
-import com.nineinfosys.android.weight.FoodNutritionTable.FoodNutritionTable;
 import com.nineinfosys.android.weight.LoginActivity.Login;
 import com.nineinfosys.android.weight.Weight.WeightLossConversionList;
 import com.squareup.okhttp.OkHttpClient;
@@ -107,10 +105,7 @@ public class MainActivityDrawer extends AppCompatActivity {
                 mDrawerLayout.closeDrawers();
 
 
-                if (menuItem.getItemId() == R.id.FoodNutritionTable) {
-                    Intent intent=new Intent(MainActivityDrawer.this, FoodNutritionTable.class);
-                    startActivity(intent);
-                }
+
                 if (menuItem.getItemId() == R.id.MoreApps) {
 
                     //Sunile Sir Code
