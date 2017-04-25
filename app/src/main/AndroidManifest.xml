@@ -72,5 +72,11 @@
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".MainActivityDrawer" />
     </activity>
+        <activity android:name=".FoodNutritionTable.FoodNutritionTable"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivityDrawer" />
+        </activity>
 </application>
 </manifest>

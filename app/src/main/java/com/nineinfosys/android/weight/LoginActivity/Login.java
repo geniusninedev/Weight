@@ -47,9 +47,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.nineinfosys.android.weight.MainActivityDrawer;
 import com.nineinfosys.android.weight.R;
 
-
 import org.json.JSONObject;
-
 
 public class Login extends AppCompatActivity {
 
@@ -71,12 +69,11 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
-        mDataBase = FirebaseDatabase.getInstance().getReference().child(getString(R.string.app_id)).child("Users");//.child(getString(R.string.facebook_data));
-        mDataBaseGoogle = FirebaseDatabase.getInstance().getReference().child(getString(R.string.app_id)).child("Users");//.child(getString(R.string.google_data));
+        mDataBase = FirebaseDatabase.getInstance().getReference().child("Users");
+        mDataBaseGoogle = FirebaseDatabase.getInstance().getReference().child("Users");
 
         email = (EditText) findViewById(R.id.edit_text_email_id);
         password = (EditText) findViewById(R.id.edit_text_password);
